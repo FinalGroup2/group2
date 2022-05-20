@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cons_app/pages/pre_activities.dart';
 
 class CActivity extends StatefulWidget {
   const CActivity({Key? key}) : super(key: key);
@@ -8,12 +10,20 @@ class CActivity extends StatefulWidget {
 }
 
 class _CActivityState extends State<CActivity> {
+
+  List<PreAct> preActivities=[
+    PreAct('worker1.jpg','hello','2022-11-3'),
+    PreAct('worker2.jpg','hello','2022-09-3'),
+    PreAct('worker3.jpg','hello','2022-06-3'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Center(
               child: Padding(
@@ -83,15 +93,52 @@ class _CActivityState extends State<CActivity> {
               ),
             ),
             SizedBox(height: 30.0),
-            Text(
-              'Previous Activities',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Roboto',
-                fontSize: 20.0,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10.0,0,0,0),
+              child: Text(
+                'Previous Activities',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  fontSize: 20.0,
+                ),
               ),
-
-            )
+            ),
+            // ListView.builder(
+            //   // scrollDirection: Axis.vertical,
+            //   itemCount: preActivities.length,
+            //   itemBuilder: (context, index){
+            //     return Card(
+            //       child: ListTile(
+            //         onTap: (){},
+            //         title:Text(preActivities[index].hired),
+            //         // title: Column(
+            //         //   children: <Widget>[
+            //         //     Row(
+            //         //       children: <Widget>[
+            //         //         Text(
+            //         //             'Hired',
+            //         //         style: TextStyle(
+            //         //           fontFamily: 'Poppins',
+            //         //           fontWeight: FontWeight.bold,
+            //         //           fontSize: 10.0,
+            //         //         ),),
+            //         //         Text(
+            //         //             preActivities[index].hired,
+            //         //           style: TextStyle(
+            //         //             fontFamily: 'Poppins',
+            //         //             fontSize: 10.0,
+            //         //             color: Colors.grey,
+            //         //           ),
+            //         //         ),
+            //         //       ],
+            //         //     ),
+            //         //   ],
+            //         // ),
+            //       ),
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),
