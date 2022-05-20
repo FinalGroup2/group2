@@ -84,7 +84,7 @@ class _CActivityState extends State<CActivity> {
             ),
             SizedBox(height: 30.0),
             Text(
-              'Previous Activitie',
+              'Previous Activities Motherfucker',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto',
