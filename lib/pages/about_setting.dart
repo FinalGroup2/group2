@@ -151,23 +151,27 @@ class _AboutState extends State<About> {
                   children: <Widget>[
                     IconButton(
                       icon:Icon(Icons.home_outlined),
+                      highlightColor: Colors.blueAccent,
                       iconSize: 35.0,
                       onPressed: (){},
                       color: Colors.white,
                     ),
                     IconButton(
+                        highlightColor: Colors.blueAccent,
                         onPressed: (){},
                         icon:Icon(Icons.history),
                         iconSize: 35.0,
                         color: Colors.white
                     ),
                     IconButton(
+                        highlightColor: Colors.blueAccent,
                       icon:Icon(Icons.notifications_none_rounded),
                       onPressed: (){},
                       iconSize: 35.0,
                       color: Colors.white
                     ),
                     IconButton(
+                        highlightColor: Colors.blueAccent,
                       icon:Icon(Icons.person_outlined),
                       onPressed: (){},
                       iconSize: 35.0,
