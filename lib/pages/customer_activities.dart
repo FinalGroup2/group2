@@ -11,14 +11,17 @@ class CActivity extends StatefulWidget {
 
 class _CActivityState extends State<CActivity> {
 
-  List<PreAct> preActivities=[
-    PreAct('worker1.jpg','hello','2022-11-3'),
-    PreAct('worker2.jpg','hello','2022-09-3'),
-    PreAct('worker3.jpg','hello','2022-06-3'),
-  ];
 
   @override
   Widget build(BuildContext context) {
+
+    List<PreAct> preActivities=[
+      PreAct('worker1.jpg','hello','2022-11-3'),
+      PreAct('worker2.jpg','Hi','2022-09-3'),
+      PreAct('worker3.jpg','Wanda','2022-06-3'),
+      PreAct('worker2.jpg','Hi','2022-09-3'),
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -104,43 +107,143 @@ class _CActivityState extends State<CActivity> {
                 ),
               ),
             ),
-            // ListView.builder(
-            //   // scrollDirection: Axis.vertical,
-            //   itemCount: preActivities.length,
-            //   itemBuilder: (context, index){
-            //     return Card(
-            //       child: ListTile(
-            //         onTap: (){},
-            //         title:Text(preActivities[index].hired),
-            //         // title: Column(
-            //         //   children: <Widget>[
-            //         //     Row(
-            //         //       children: <Widget>[
-            //         //         Text(
-            //         //             'Hired',
-            //         //         style: TextStyle(
-            //         //           fontFamily: 'Poppins',
-            //         //           fontWeight: FontWeight.bold,
-            //         //           fontSize: 10.0,
-            //         //         ),),
-            //         //         Text(
-            //         //             preActivities[index].hired,
-            //         //           style: TextStyle(
-            //         //             fontFamily: 'Poppins',
-            //         //             fontSize: 10.0,
-            //         //             color: Colors.grey,
-            //         //           ),
-            //         //         ),
-            //         //       ],
-            //         //     ),
-            //         //   ],
-            //         // ),
-            //       ),
-            //     );
-            //   },
-            // ),
+            SizedBox(height: 10.0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(5.0,0,0,0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border:Border.all(color: Colors.white,width: 1),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                height: 290,
+                width: 400,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: preActivities.length,
+                  itemBuilder: (context,index){
+                    return Card(
+
+                      elevation: 10.0,
+                      shadowColor: Colors.blueAccent,
+                      margin: EdgeInsets.fromLTRB(10.0, 0,10.0,10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          onTap: (){},
+                          leading: Container(
+                              height:50,
+                              width: 50,
+                            child: Image.asset('assets/${preActivities[index].profile}'),
+                          ),
+                          title: Column(
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex:3,
+                                    child: Text(
+                                        'Hired',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13.0,
+                                    ),),
+                                  ),
+
+                                  Expanded(
+                                    flex:14,
+                                    child: Text(
+                                      preActivities[index].hired,
+                                      style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13.0,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 5.0),
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex:3,
+                                    child: Text(
+                                      'Date',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13.0,
+                                      ),),
+                                  ),
+                                  Expanded(
+                                    flex:14,
+                                    child: Text(
+                                    preActivities[index].date,
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 13.0,
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Padding(  //Naviation Bar
+              padding: const EdgeInsets.fromLTRB(22.0, 0, 22.0, 0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Color(0xFF125488), ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    IconButton(
+                      highlightColor: Colors.blueAccent,
+                      icon:Icon(Icons.home_outlined),
+                      iconSize: 35.0,
+                      onPressed: (){},
+                      color: Colors.white,
+                    ),
+                    IconButton(
+                        highlightColor: Colors.blueAccent,
+                        onPressed: (){},
+                        icon:Icon(Icons.history),
+                        iconSize: 35.0,
+                        color: Colors.white
+                    ),
+                    IconButton(
+                        highlightColor: Colors.blueAccent,
+                        icon:Icon(Icons.notifications_none_rounded),
+                        onPressed: (){},
+                        iconSize: 35.0,
+                        color: Colors.white
+                    ),
+                    IconButton(
+                        highlightColor: Colors.blueAccent,
+                        icon:Icon(Icons.person_outlined),
+                        onPressed: (){},
+                        iconSize: 35.0,
+                        color: Colors.white
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
+
       ),
     );
   }
