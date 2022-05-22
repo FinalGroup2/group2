@@ -140,8 +140,6 @@ class _AboutState extends State<About> {
                   ),
                 ),
               ),
-              SizedBox(height:12.0),
-
             ],
           ),
         ),

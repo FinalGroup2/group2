@@ -12,7 +12,7 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int currindex=0;
   final screens=[
-    About(),CActivity(),Text('Navigation Bar Test'),Text('Navigation Bar Test')
+    Text('Home Page'),CActivity(),Text('Notifications'),Text('Profile')
   ];
   @override
   Widget build(BuildContext context) {
