@@ -17,7 +17,10 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:screens[currindex],
+      body:IndexedStack(
+        index: currindex,
+          children: screens,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currindex,
         onTap: (index)=>setState(()=>currindex=index),
