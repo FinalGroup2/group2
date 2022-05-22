@@ -21,34 +21,38 @@ class _NavBarState extends State<NavBar> {
         index: currindex,
           children: screens,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currindex,
-        onTap: (index)=>setState(()=>currindex=index),
-        showUnselectedLabels: false,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-            backgroundColor: Color(0xFF125488),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'Activities',
-            backgroundColor: Color(0xFF125488),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_none_rounded),
-            label: 'Notifications',
-            backgroundColor: Color(0xFF125488),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-            backgroundColor: Color(0xFF125488),
-          ),
-        ],
-        selectedItemColor: Colors.cyanAccent,
-        iconSize: 35.0,
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.circular(50.0),
+        child: BottomNavigationBar(
+
+          currentIndex: currindex,
+          onTap: (index)=>setState(()=>currindex=index),
+          showUnselectedLabels: false,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+              backgroundColor: Color(0xFF125488),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: 'Activities',
+              backgroundColor: Color(0xFF125488),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_none_rounded),
+              label: 'Notifications',
+              backgroundColor: Color(0xFF125488),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              label: 'Profile',
+              backgroundColor: Color(0xFF125488),
+            ),
+          ],
+          selectedItemColor: Colors.cyanAccent,
+          iconSize: 35.0,
+        ),
       ),
     );
   }
