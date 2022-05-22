@@ -17,12 +17,13 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body:IndexedStack(
         index: currindex,
           children: screens,
       ),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(50.0),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(50.0),topRight: Radius.circular(50.0)),
         child: BottomNavigationBar(
 
           currentIndex: currindex,

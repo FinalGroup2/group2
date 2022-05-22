@@ -43,6 +43,7 @@ class _CActivityState extends State<CActivity> {
                 ),
               ),
               Card(
+                color: Colors.cyanAccent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -126,6 +127,7 @@ class _CActivityState extends State<CActivity> {
                     itemCount: preActivities.length,
                     itemBuilder: (context,index){
                       return Card(
+                        // color: Colors.cyanAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
