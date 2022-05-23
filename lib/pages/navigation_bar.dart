@@ -1,3 +1,4 @@
+import 'package:cons_app/pages/labour_activities.dart';
 import 'package:flutter/material.dart';
 import 'package:cons_app/pages/about_setting.dart';
 import 'package:cons_app/pages/customer_activities.dart';
@@ -12,7 +13,7 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int currindex=0;
   final screens=[
-    Text('Home Page'),CActivity(),Text('Notifications'),Text('Profile')
+    Text('Home Page'),LActivity(),Text('Notifications'),Text('Profile')
   ];
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:cons_app/pages/navigation_bar.dart';
 import 'package:cons_app/pages/labour_activities.dart';
 void main() {
   runApp(const MaterialApp(
-    home:LActivity(),
+    home:NavBar(),
   ));
 }
 
