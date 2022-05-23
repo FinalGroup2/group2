@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cons_app/pages/pre_activities.dart';
+import 'package:cons_app/pages/customer_pre_activities.dart';
 
 class CActivity extends StatefulWidget {
   const CActivity({Key? key}) : super(key: key);
